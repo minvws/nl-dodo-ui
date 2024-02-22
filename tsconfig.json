@@ -1,0 +1,14 @@
+{
+  "extends": ["astro/tsconfigs/strict"],
+  "compilerOptions": {
+    "composite": true,
+    "baseUrl": ".",
+    "jsx": "preserve",
+    "paths": {
+      "@lib/*": ["src/lib/*"],
+      "@components/*": ["src/components/*"],
+      "@dodo/ui/*": ["src/lib/*"],
+      "@dodo/ui/styles/*": ["src/lib/*"]
+    }
+  }
+}
