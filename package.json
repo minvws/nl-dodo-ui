@@ -1,0 +1,46 @@
+{
+  "name": "@dodo/ui",
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "astro telemetry disable && astro check",
+    "dev": "astro telemetry disable && astro dev",
+    "start": "astro telemetry disable && astro dev",
+    "build": "npm run test && astro telemetry disable && astro build",
+    "preview": "astro telemetry disable && astro preview",
+    "astro": "astro telemetry disable && astro"
+  },
+  "exports": {
+    ".": "./src/lib/main.ts",
+    "./types": "./src/lib/types.d.ts",
+    "./settings": "./src/lib/settings/index.ts",
+    "./primitives": "./src/lib/primitives/index.ts",
+    "./elements": "./src/lib/elements/index.ts",
+    "./components": "./src/lib/components/index.ts",
+    "./utilities": "./src/lib/utilities/index.ts",
+    "./helpers": "./src/lib/helpers/index.ts",
+    "./styles/*": "./src/lib/*.scss",
+    "./styles/*.scss": "./src/lib/*.scss"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.5.6",
+    "@astrojs/starlight": "^0.20.1",
+    "@duetds/date-picker": "^1.4.0",
+    "astro": "^4",
+    "astro-icon": "^1",
+    "postcss-custom-media": "^10.0",
+    "sharp": "^0.33.2",
+    "typescript": "^5.3.3",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "@types/uuid": "^9.0.8",
+    "sass": "^1.71.1"
+  },
+  "peerDependencies": {
+    "astro": "^4",
+    "astro-icon": "^1",
+    "postcss-custom-media": "^10.0",
+    "sass": "^1.71"
+  }
+}

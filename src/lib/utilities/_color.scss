@@ -1,0 +1,14 @@
+/* ==========================================================================
+		utilitities.color
+/ =========================================================================== */
+
+@use '../settings';
+
+@each $key, $value in settings.$colors {
+	.u-background--#{$key} {
+		background-color: var(--color-#{$key});
+	}
+	.u-color--#{$key} {
+		color: var(--color-#{$key});
+	}
+}
