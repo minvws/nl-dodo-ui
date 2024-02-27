@@ -23,10 +23,10 @@
     "./styles/*.scss": "./src/lib/*.scss"
   },
   "dependencies": {
-    "@astrojs/starlight": "^0.19.1",
+    "@astrojs/starlight": "^0.20.1",
     "@duetds/date-picker": "^1.4.0",
-    "astro": "^4.4.2",
-    "astro-icon": "1.1.0",
+    "astro": "^4.4.5",
+    "astro-icon": "^1.1.0",
     "postcss-custom-media": "^10.0.3",
     "sharp": "^0.33.2",
     "uuid": "^9.0.1"
@@ -35,7 +35,9 @@
     "sass": "^1.71.1"
   },
   "peerDependencies": {
-    "sass": "^1.71.1",
-    "postcss-custom-media": "^10.0.3"
+    "astro": "^4",
+    "astro-icon": "^1",
+    "sass": "^1.71",
+    "postcss-custom-media": "^10.0"
   }
 }
