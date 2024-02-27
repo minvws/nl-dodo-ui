@@ -23,6 +23,9 @@ const { class: className, icons, ...attrs } = Astro.props;
 </div>
 
 <style lang="scss">
+	@use '@lib/tools/rem';
+	@use '@lib/settings';
+
 	.c-icon-grid {
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(min(6rem, 100%), 1fr));
@@ -48,7 +51,7 @@ const { class: className, icons, ...attrs } = Astro.props;
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		inline-size: var(--space-27);
+		inline-size: #{rem.convert(27 * settings.$baseline)};
 		aspect-ratio: 4 / 3;
 		border: 1px solid;
 		border-radius: var(--radii-milli, 8px);
