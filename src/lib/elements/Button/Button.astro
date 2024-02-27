@@ -21,7 +21,6 @@ interface ButtonProps extends HTMLAttributes<'button'>, Shared {}
 
 interface LinkProps extends HTMLAttributes<'a'>, Shared {
 	disabled?: boolean;
-	hiddenLabel?: string;
 }
 
 type Props = ButtonProps | LinkProps;
@@ -80,7 +79,7 @@ const trailingIcon = isExternalUrl
 
 <Element
 	class={combinedClasses}
-	type={!attrs.href ? (type ? (type as Button['type']) : 'button') : undefined}
+	type={!attrs.href ? (type ? (type as ButtonProps['type']): 'button') : undefined}
 	disabled={!attrs.href && disabled ? disabled : undefined}
 	data-disabled={attrs.href && disabled ? disabled : undefined}
 	formaction={!attrs.href && attrs.formaction ? attrs.formaction : undefined}

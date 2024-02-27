@@ -124,7 +124,7 @@ const { id, title, variant = 'default' } = Astro.props;
 			e.stopPropagation();
 		});
 
-		window.addEventListener('hashchange', (event) => {
+		window.addEventListener('hashchange', () => {
 			closeModal(modal);
 		});
 	});

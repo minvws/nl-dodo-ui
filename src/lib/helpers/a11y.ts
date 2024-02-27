@@ -3,9 +3,9 @@
  * @param element HTMLElement
  * @returns NodeList
  */
-export const getKeyboardFocusableElements = (element) => {
+export const getKeyboardFocusableElements = (element: HTMLElement):HTMLElement[] => {
 	return [
-		...element.querySelectorAll(
+		...element.querySelectorAll<HTMLElement>(
 			'a, button, input, textarea, select, details,[tabindex]:not([tabindex="-1"])',
 		),
 	].filter((el) => !el.hasAttribute('disabled'));
@@ -16,7 +16,7 @@ export const getKeyboardFocusableElements = (element) => {
  * @param element
  * @param event
  */
-export const trapFocus = (element, event: KeyboardEvent) => {
+export const trapFocus = (element: HTMLElement, event: KeyboardEvent) => {
 	const focusables = getKeyboardFocusableElements(element);
 	const firstFocusable = focusables[0];
 	const lastFocusable = focusables[focusables.length - 1];

@@ -251,7 +251,7 @@ const globalData = useGlobalData({ locale });
 			/**
 			 * Create indicators
 			 */
-			paneElements.forEach((pane, index) => {
+			paneElements.forEach((_, index) => {
 				if (indicatorTemplate && indicatorWrapElement) {
 					const clone = indicatorTemplate.content.firstElementChild?.cloneNode(
 						true,
@@ -299,7 +299,7 @@ const globalData = useGlobalData({ locale });
 			});
 
 			// Iterate over the panes and observe each one.
-			paneElements.forEach((pane, index) => {
+			paneElements.forEach((pane) => {
 				observer.observe(pane);
 			});
 
@@ -341,7 +341,7 @@ const globalData = useGlobalData({ locale });
 			 * Click on indicators
 			 */
 			indicatorElements.forEach((indicator) => {
-				indicator.addEventListener('click', (event) => {
+				indicator.addEventListener('click', () => {
 					const index = indicatorElements.indexOf(indicator);
 					paneElements[index].scrollIntoView({
 						behavior: 'smooth',

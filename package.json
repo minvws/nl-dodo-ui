@@ -3,12 +3,12 @@
   "type": "module",
   "version": "1.0.0",
   "scripts": {
-    "test": "echo \"Warning: no test specified\" && exit 0",
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro check && astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "test": "astro telemetry disable && astro check",
+    "dev": "astro telemetry disable && astro dev",
+    "start": "astro telemetry disable && astro dev",
+    "build": "npm run test && astro telemetry disable && astro build",
+    "preview": "astro telemetry disable && astro preview",
+    "astro": "astro telemetry disable && astro"
   },
   "exports": {
     ".": "./src/lib/main.ts",
@@ -23,21 +23,24 @@
     "./styles/*.scss": "./src/lib/*.scss"
   },
   "dependencies": {
+    "@astrojs/check": "^0.5.6",
     "@astrojs/starlight": "^0.20.1",
     "@duetds/date-picker": "^1.4.0",
-    "astro": "^4.4.5",
-    "astro-icon": "^1.1.0",
-    "postcss-custom-media": "^10.0.3",
+    "astro": "^4",
+    "astro-icon": "^1",
+    "postcss-custom-media": "^10.0",
     "sharp": "^0.33.2",
+    "typescript": "^5.3.3",
     "uuid": "^9.0.1"
   },
   "devDependencies": {
+    "@types/uuid": "^9.0.8",
     "sass": "^1.71.1"
   },
   "peerDependencies": {
     "astro": "^4",
     "astro-icon": "^1",
-    "sass": "^1.71",
-    "postcss-custom-media": "^10.0"
+    "postcss-custom-media": "^10.0",
+    "sass": "^1.71"
   }
 }

@@ -10,7 +10,7 @@ interface Props extends HTMLAttributes<'div'> {
 	image?: PictureProps['image'];
 }
 
-const { title, subtitle, image, class: className, ...attrs } = Astro.props;
+const { title, subtitle, image, class: className } = Astro.props;
 ---
 
 <Media class={`c-advice${className ? ` | ${className}` : ''}`} image={image}>

@@ -1,7 +1,8 @@
 ---
 import { type HTMLAttributes } from 'astro/types';
 import { Button } from '@lib/elements/Button';
-import { animations } from '@lib/primitives/animation';
+import { animations, type Animations } from '@lib/primitives/animation';
+import type { Icons } from '@lib/elements';
 
 interface Props extends HTMLAttributes<'div'> {}
 
@@ -13,7 +14,10 @@ const animationsWithIcons = animations.map((animation) => ({
 			: animation === 'bounce'
 			? 'chevron-small-down'
 			: 'arrow-right',
-}));
+})) as {
+	name: Animations;
+	icon: Icons;
+}[];
 ---
 
 {

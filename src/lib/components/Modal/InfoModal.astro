@@ -5,7 +5,7 @@ import { Modal, type ModalProps } from '.';
 
 type StrippedButtonProps = Omit<HTMLAttributes<'button'>, 'id' | 'title'>;
 
-interface Props extends StrippedButtonProps, ModalProps {
+export interface Props extends StrippedButtonProps, ModalProps {
 	label: string;
 	iconDescription?: string;
 }

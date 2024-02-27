@@ -11,16 +11,17 @@ interface Shared {
 	interactionIconAnimation?: Animations;
 	hiddenLabel?: string;
 	href?: string | URL | undefined | null;
+	formaction?: string;
 	isExternal?: boolean;
 }
 
-interface Button extends HTMLAttributes<'button'>, Shared {}
+interface ButtonProps extends HTMLAttributes<'button'>, Shared {}
 
-interface Link extends HTMLAttributes<'a'>, Shared {
+interface LinkProps extends HTMLAttributes<'a'>, Shared {
 	disabled?: boolean;
 }
 
-type Props = Button | Link;
+type Props = ButtonProps | LinkProps;
 
 const {
 	disabled,
@@ -68,7 +69,7 @@ const selectedIcon =
 
 <Element
 	class={combinedClasses}
-	type={!attrs.href && type ? (type as Button['type']) : undefined}
+	type={!attrs.href ? (type ? (type as ButtonProps['type']): 'button') : undefined}
 	disabled={!attrs.href && disabled ? disabled : undefined}
 	data-disabled={attrs.href && disabled ? disabled : undefined}
 	formaction={!attrs.href && attrs.formaction ? attrs.formaction : undefined}

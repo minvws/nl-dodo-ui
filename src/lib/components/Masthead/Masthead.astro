@@ -238,7 +238,7 @@ const hasNav =
 		);
 		const navElement = mastheadElement.querySelector(
 			'[data-module="nav-main"]',
-		);
+		) as HTMLElement;
 		const mainElement = document.querySelector('main') as HTMLElement;
 
 		// Store masthead spacing in a variable which can be used by other modules
